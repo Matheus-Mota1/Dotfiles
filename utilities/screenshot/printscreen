@@ -1,0 +1,20 @@
+#! /bin/sh
+
+# Author: Matheus Mota
+# Script for taking screen shoots and saving them in a specify folder but also
+# in the clipboard allowing you to Ctrl + C the screenshot took with a notification
+
+
+output="$HOME/Pictures/screenshots/%Y-%m-%d-%T-screenshot.png"
+clipboard='xclip -selection clipboard -t image/png -i $f'
+
+case "$1" in
+	"select") 
+        scrot "$output" --select --line mode=edge -e 'optipng $f' -e "$clipboard" || exit ;;
+	"window") 
+        scrot "$output" --focused --border -e 'optipng $f' -e "$clipboard" || exit ;;
+	*) 
+        scrot "$output" -e 'optipng $f' -e "$clipboard"|| exit ;;
+esac
+
+notify-send "Screenshot taken."
