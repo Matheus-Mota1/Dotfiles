@@ -1,3 +1,16 @@
 {
-    "workbench.colorTheme": "Default Dark Modern"
+  "window.zoomLevel": 1,
+  "editor.fontSize": 18,
+  "editor.formatOnSave": true,
+  "elixirLS.suggestSpecs": false,
+  "elixir.credo.strictMode": true,
+  "git.openRepositoryInParentFolders": "never",
+  "workbench.colorTheme": "Dracula Theme",
+  "workbench.startupEditor": "none",
+  "files.autoSave": "afterDelay",
+  "editor.accessibilityPageSize": 15,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
