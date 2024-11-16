@@ -1,0 +1,9 @@
+[Trigger]
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = Removendo pacotes em cache de softwares desinstalados...
+When = PostTransaction
+Exec = paccache -ruk0

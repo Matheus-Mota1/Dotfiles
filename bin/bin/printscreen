@@ -1,6 +1,5 @@
 #! /bin/sh
 
-# Author: Matheus Mota
 # Script for taking screen shoots and saving them in a specify folder but also
 # in the clipboard allowing you to Ctrl + C the screenshot took with a notification
 
