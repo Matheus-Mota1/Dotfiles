@@ -9,9 +9,9 @@ export PATH="${PATH}:/home/folclore/bin"
 export PATH="$HOME/.pyenv/shims:$HOME/.pyenv/bin:$PATH"
 
 # Autostart X at Login 
-if [ -z "$DISPLAY" ] && [[ "$XDG_VTNR" -eq 1 ]]; then
-  exec startx
-fi
+# if [ -z "$DISPLAY" ] && [[ "$XDG_VTNR" -eq 1 ]]; then
+#   exec startx
+# fi
 
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
