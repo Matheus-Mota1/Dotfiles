@@ -10,7 +10,8 @@ This repository contains my personal configuration files (**dotfiles**) for vari
 - **Portability:** Easily deploy configurations on any system.
 - **Simplicity:** Uses symbolic links to keep configurations organized and non-intrusive.
 - **Reversibility:** Easily remove or update configurations without affecting the system.
-:
+  :
+
 ---
 
 ## 📂 Repository Structure
@@ -30,7 +31,7 @@ dotfiles/
 ├── nvim/              # Neovim configuration
 │   └── .config
 |		└── nvim
-|			└── init.vim 
+|			└── init.vim
 |
 └── README.md         # This file
 ```
@@ -42,8 +43,9 @@ Each directory corresponds to a set of configuration files or a specific tool. W
 ## 🛠️ Requirements
 
 - **GNU Stow:** A symlink manager used to deploy configurations.
-  
+
   Install it using your package manager:
+
   - Arch Linux:
     ```bash
     sudo pacman -S stow
@@ -64,9 +66,10 @@ Each directory corresponds to a set of configuration files or a specific tool. W
 ### Clone the Repository
 
 First, clone this repository into your home directory or any preferred location:
+
 ```bash
 git clone https://github.com/Matheus-Mota1/Dotfiles
-cd ~/DOtfiles
+cd ~/Dotfiles
 ```
 
 ### Deploy Configurations
@@ -76,6 +79,7 @@ Use **GNU Stow** to create symbolic links for the desired configuration package(
 For example:
 
 1. To deploy the Bash configuration:
+
 ```bash
 stow -t ~ bash
 ```
@@ -83,19 +87,23 @@ stow -t ~ bash
 This creates a `symlink` for `.bashrc` in your home directory.
 
 2. To deploy `pacman` hooks (requires root permissions):
+
 ```bash
 sudo stow -t / pacman_hooks
 ```
 
 This creates a `symlink` for `pacman` hooks into the `/`
+
 ### Remove Configurations
 
 To remove symbolic links for a specific package:
+
 ```bash
 stow -D -t ~ bash
 ```
 
 For system-wide configurations (like `pacman_hooks`):
+
 ```bash
 sudo stow -D -t / pacman_hooks
 ```
@@ -121,5 +129,4 @@ This repository is licensed under the [MIT License](LICENSE). Feel free to use, 
 
 ## 🤝 Contributing
 
-Feel free to submit issues or pull requests to improve this repository. Any feedback or suggestions are welcome! I would love !!!  
-
+Feel free to submit issues or pull requests to improve this repository. Any feedback or suggestions are welcome! I would love !!!
