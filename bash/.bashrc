@@ -15,8 +15,29 @@ alias vi='nvim'
 alias du='du -h -d 1'
 alias clipboard='xclip -selection clipboard'
 
-PS1='[\u@\h \W]\$ '
+PS1='[\u@\h \W]\$'
 
+# I don't want startship to run in the TTYs
+if [[ x$DISPLAY != x ]]; then
+    eval "$(starship init bash)" 
+fi
+
+# Managing ssh-agent between loggings and terminal sessions
+# Keeping only one session running
+
+# if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+#    ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
+# fi
+# if [[ ! -f "$SSH_AUTH_SOCK" ]]; then
+#    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+# fi
+ 
+### ~/.bashrc is used instead of the upstream suggested ~/.bash_profile on Arch
+# --inherit any-once for wayland, issue 148
+# --confhost option is broken, issue 143
+eval $(keychain --quiet --inherit any-once --agents ssh)
+
+# Prevent partial upgrades, since pacman doesn't support it 
 pacman() {
     if [[ "$1" == "-Sy" ]]; then
         echo "ERROR: -Sy options do a partial upgrade that may break your system are your sure ?"
